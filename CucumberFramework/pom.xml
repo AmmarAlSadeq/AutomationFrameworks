@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- Project metadata -->
+    <groupId>com.saucedemo.tests</groupId> <!-- Group ID for the project -->
+    <artifactId>CucumberFramework</artifactId> <!-- Artifact ID for the project -->
+    <version>1.0-SNAPSHOT</version> <!-- Version of the project -->
+
+    <!-- Compiler and encoding properties -->
+    <properties>
+        <maven.compiler.source>21</maven.compiler.source> <!-- Java version for source code -->
+        <maven.compiler.target>21</maven.compiler.target> <!-- Java version for compiled code -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding> <!-- Encoding for source files -->
+    </properties>
+
+    <!-- Dependencies section -->
+    <dependencies>
+        <!-- Cucumber dependencies for writing and running tests -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>7.15.0</version> <!-- Cucumber Java binding -->
+            <scope>test</scope> <!-- Scope is test, as it's only needed for testing -->
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>7.15.0</version> <!-- Cucumber JUnit integration -->
+            <scope>test</scope>
+        </dependency>
+
+        <!-- JUnit 5 dependencies for test execution -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.11.4</version> <!-- JUnit 5 API -->
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.11.4</version> <!-- JUnit 5 engine for running tests -->
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Selenium dependency for browser automation -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>4.28.1</version> <!-- Selenium Java bindings -->
+        </dependency>
+
+        <!-- ExtentReports for generating detailed test reports -->
+        <dependency>
+            <groupId>com.aventstack</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>5.1.2</version> <!-- ExtentReports library -->
+        </dependency>
+
+        <!-- ExtentReports adapter for Cucumber 7 -->
+        <dependency>
+            <groupId>tech.grasshopper</groupId>
+            <artifactId>extentreports-cucumber7-adapter</artifactId>
+            <version>1.14.0</version> <!-- Integrates ExtentReports with Cucumber -->
+        </dependency>
+
+        <!-- Maven Surefire Plugin dependency for running tests -->
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>3.5.2</version> <!-- Surefire plugin for test execution -->
+        </dependency>
+
+        <!-- Cucumber JUnit Platform Engine for running Cucumber tests with JUnit 5 -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit-platform-engine</artifactId>
+            <version>7.15.0</version> <!-- Enables Cucumber to work with JUnit 5 -->
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Appium Java Client for mobile automation -->
+        <dependency>
+            <groupId>io.appium</groupId>
+            <artifactId>java-client</artifactId>
+            <version>9.4.0</version> <!-- Appium Java bindings for mobile testing -->
+        </dependency>
+    </dependencies>
+
+    <!-- Build configuration -->
+    <build>
+        <plugins>
+            <!-- Maven Surefire Plugin configuration -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.2</version> <!-- Surefire plugin version -->
+                <configuration>
+                    <includes>
+                        <!-- Include the Cucumber test runner class -->
+                        <include>**/CucumberTestRunner.java</include>
+                    </includes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

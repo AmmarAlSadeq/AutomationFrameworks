@@ -1,0 +1,9 @@
+[
+  {
+    "validUsername": "standard_user",
+    "validPassword": "secret_sauce",
+    "invalidUsername": "invalid_user",
+    "invalidPassword": "wrong_password",
+    "invalidCredentialsMessage": "Username and password do not match any user in this service."
+  }
+]

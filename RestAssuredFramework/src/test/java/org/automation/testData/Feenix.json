@@ -1,0 +1,11 @@
+[
+{
+  "validUsername": "hkhazaal+test@feenix.ai",
+  "validPassword": "2WgsPc6pxBzWn2s4urc9*36",
+  "invalidUsername": "ammar+test@feenix.ai",
+  "invalidPassword": "Abc@123*36",
+  "loginSuccessfullyMessage": "null",
+  "loginWithInvalidCredentialsMessage": "Account credentials invalid. Please reset password if required",
+  "loginWithInvalidPasswordMessage": "Incorrect password"
+}
+]

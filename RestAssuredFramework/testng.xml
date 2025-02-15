@@ -1,0 +1,28 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Simple Books Test Suite">
+    <!-- TestNG suite configuration for testing Simple Books APIs -->
+
+    <!-- Listeners section -->
+    <listeners>
+        <!-- Custom TestNG listener for reporting and logging -->
+        <listener class-name="org.automation.reporting.TestListener" />
+    </listeners>
+
+    <!-- Test configuration -->
+    <test name="Simple Books APIs Test">
+        <!-- Classes to include in the test -->
+        <classes>
+            <!-- Test class for GET /books API -->
+            <class name="org.automation.tests.GetBooksTest" />
+
+            <!-- Test class for POST /orders API -->
+            <class name="org.automation.tests.PostOrderTest" />
+
+            <!-- Test class for PATCH /orders/{orderId} API -->
+            <class name="org.automation.tests.PatchOrderTest" />
+
+            <!-- Test class for DELETE /orders/{orderId} API -->
+            <class name="org.automation.tests.DeleteOrderTest" />
+        </classes>
+    </test>
+</suite>

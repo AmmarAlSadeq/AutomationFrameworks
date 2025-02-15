@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-02-16T00:06:25 TRT" name="org.automation.android.LoginTest" finished-at="2025-02-16T00:07:01 TRT" duration-ms="35736">
+    <groups>
+    </groups>
+    <test started-at="2025-02-16T00:06:25 TRT" name="Command line test" finished-at="2025-02-16T00:07:01 TRT" duration-ms="35736">
+      <class name="org.automation.android.LoginTest">
+        <test-method is-config="true" signature="configureAppium()[pri:0, instance:org.automation.android.LoginTest@6295d394]" started-at="2025-02-16T00:06:25 TRT" name="configureAppium" finished-at="2025-02-16T00:06:37 TRT" duration-ms="12468" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- configureAppium -->
+        <test-method signature="validLoginTest(java.util.HashMap)[pri:1, instance:org.automation.android.LoginTest@6295d394]" started-at="2025-02-16T00:06:38 TRT" name="validLoginTest" data-provider="getData" finished-at="2025-02-16T00:06:44 TRT" duration-ms="6020" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{invalidPassword=wrong_password, validPassword=secret_sauce, invalidUsername=invalid_user, invalidCredentialsMessage=Username and password do not match any user in this service., validUsername=standard_user}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validLoginTest -->
+        <test-method signature="invalidLoginTest(java.util.HashMap)[pri:2, instance:org.automation.android.LoginTest@6295d394]" started-at="2025-02-16T00:06:44 TRT" name="invalidLoginTest" data-provider="getData" finished-at="2025-02-16T00:07:00 TRT" duration-ms="16333" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{invalidPassword=wrong_password, validPassword=secret_sauce, invalidUsername=invalid_user, invalidCredentialsMessage=Username and password do not match any user in this service., validUsername=standard_user}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invalidLoginTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.automation.android.LoginTest@6295d394]" started-at="2025-02-16T00:07:00 TRT" name="tearDown" finished-at="2025-02-16T00:07:01 TRT" duration-ms="714" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- org.automation.android.LoginTest -->
+    </test> <!-- Command line test -->
+  </suite> <!-- org.automation.android.LoginTest -->
+</testng-results>

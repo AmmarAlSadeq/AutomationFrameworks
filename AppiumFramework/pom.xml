@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- Project metadata -->
+    <groupId>org.example</groupId> <!-- Group ID for the project -->
+    <artifactId>AppiumFramework</artifactId> <!-- Artifact ID for the project -->
+    <version>1.0-SNAPSHOT</version> <!-- Version of the project -->
+
+    <!-- Compiler and encoding properties -->
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source> <!-- Java version for source code -->
+        <maven.compiler.target>8</maven.compiler.target> <!-- Java version for compiled code -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding> <!-- Encoding for source files -->
+    </properties>
+
+    <!-- Dependencies section -->
+    <dependencies>
+        <!-- Appium Java Client for mobile automation -->
+        <dependency>
+            <groupId>io.appium</groupId>
+            <artifactId>java-client</artifactId>
+            <version>9.4.0</version> <!-- Appium Java bindings for mobile testing -->
+        </dependency>
+
+        <!-- TestNG for running tests -->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.7.0</version> <!-- TestNG framework for test execution -->
+        </dependency>
+
+        <!-- Selenium for browser automation -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>4.28.1</version> <!-- Selenium Java bindings -->
+        </dependency>
+
+        <!-- Apache Commons IO for file manipulation -->
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.14.0</version> <!-- Utilities for file and I/O operations -->
+        </dependency>
+
+        <!-- Jackson for JSON parsing -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.15.3</version> <!-- JSON parsing and generation -->
+        </dependency>
+
+        <!-- ExtentReports for generating test reports -->
+        <dependency>
+            <groupId>com.aventstack</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>5.1.1</version> <!-- ExtentReports library for reporting -->
+        </dependency>
+    </dependencies>
+
+    <!-- Profiles for different test suites -->
+    <profiles>
+        <!-- Regression test profile -->
+        <profile>
+            <id>Regression</id> <!-- Profile ID -->
+            <build>
+                <pluginManagement>
+                    <plugins>
+                        <!-- Maven Surefire Plugin for running TestNG tests -->
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-surefire-plugin</artifactId>
+                            <version>3.1.2</version> <!-- Surefire plugin version -->
+                            <configuration>
+                                <suiteXmlFiles>
+                                    <suiteXmlFile>testNGSuites/testng.xml</suiteXmlFile> <!-- Regression test suite -->
+                                </suiteXmlFiles>
+                            </configuration>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
+            </build>
+        </profile>
+
+        <!-- Smoke test profile -->
+        <profile>
+            <id>Smoke</id> <!-- Profile ID -->
+            <build>
+                <pluginManagement>
+                    <plugins>
+                        <!-- Maven Surefire Plugin for running TestNG tests -->
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-surefire-plugin</artifactId>
+                            <version>3.1.2</version> <!-- Surefire plugin version -->
+                            <configuration>
+                                <suiteXmlFiles>
+                                    <suiteXmlFile>testNGSuites/testng_smokeTest.xml</suiteXmlFile> <!-- Smoke test suite -->
+                                </suiteXmlFiles>
+                            </configuration>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
+            </build>
+        </profile>
+    </profiles>
+</project>

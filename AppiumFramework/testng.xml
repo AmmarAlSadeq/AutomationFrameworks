@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite" parallel="tests"  thread-count="2">
+    <listeners>
+        <listener class-name="org.automation.testUtils.Listeners"></listener>
+    </listeners>
+    <test name="Login Test on Android">
+        <classes>
+            <class name="org.automation.android.LoginTest">
+            </class>
+        </classes>
+    </test>
+</suite>
