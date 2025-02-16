@@ -10,6 +10,8 @@ This repository contains three automation frameworks implemented in Java:
 
 All frameworks are designed to be executed using Maven (`mvn`), and they generate Extent Reports for test execution results.
 
+**Note**: All three frameworks are included in this repository for delivery purposes. However, to run them, you should pull each framework separately and execute them individually.
+
 ## Frameworks Details
 
 ### 1. UI Automation Framework (Selenium + Cucumber)
