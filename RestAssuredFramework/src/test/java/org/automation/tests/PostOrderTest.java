@@ -1,5 +1,6 @@
 package org.automation.tests;
 
+import org.automation.BaseClass;
 import org.automation.utils.APIUtils;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
@@ -9,13 +10,15 @@ import org.automation.utils.Helper;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.util.HashMap;
+
 import static io.restassured.RestAssured.given;
 
 /**
  * Test class for verifying the POST /orders endpoint.
  * This test ensures that an order can be successfully created.
  */
-public class PostOrderTest {
+public class PostOrderTest extends BaseClass {
 
     // Static block to set the base URI for the API
     static {
@@ -31,11 +34,12 @@ public class PostOrderTest {
      * 4. Verify the response status code is 201 (Created).
      * 5. Validate that the response contains an order ID.
      */
-    @Test
-    public void testPostOrder() {
+    @Test(dataProvider = "getData", priority = 0)
+    public void testPostOrder(HashMap<String, String> data) {
         // Generate a random email and use a fixed client name "Ammar"
         String email = Helper.getRandomEmail();
-        String clientName = "Ammar";
+        String customerName = data.get("customerName");
+        String clientName = data.get("clientName");
 
         // Register the client with random email and fixed client name, then get the Bearer token
         String token = APIUtils.getTokenAFterClientRegistration(clientName, email);
@@ -43,7 +47,7 @@ public class PostOrderTest {
         // Create OrderRequest POJO and set the request data
         OrderRequest orderRequest = new OrderRequest();
         orderRequest.setBookId(1);  // Example book ID
-        orderRequest.setCustomerName("John");  // Example customer name
+        orderRequest.setCustomerName(customerName);  // Example customer name
 
         // Send POST request to /orders with the authentication token
         Response response = given()

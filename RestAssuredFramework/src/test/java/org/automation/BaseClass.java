@@ -22,7 +22,7 @@ public class BaseClass {
     @DataProvider
     public Object[][] getData() throws IOException {
         // Fetch test data from the JSON file located in the testData directory
-        List<HashMap<String, String>> data = Helper.getJsonData(System.getProperty("user.dir") + "//src//test//java//org//automation//testData//Feenix.json");
+        List<HashMap<String, String>> data = Helper.getJsonData(System.getProperty("user.dir") + "//src//test//java//org//automation//testData//SimpleBooks.json");
         return new Object[][]{{data.get(0)}}; // Return the first set of test data
     }
 
